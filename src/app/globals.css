@@ -16,6 +16,28 @@
   }
 }
 
+@layer components {
+  .text {
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(245 158 11); /* amber-300 */
+    transition: width 0.3s ease-out;
+  }
+
+  .text:hover::before {
+    width: 100%;
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
